@@ -1,46 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="../node_modules/codemirror/lib/codemirror.css">
-	<link rel="stylesheet" href="../node_modules/codemirror/theme/base16-dark.css">
-	<link rel="stylesheet" href="../node_modules/codemirror/addon/search/matchesonscrollbar.css">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
+	<link href="/client/style.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="../node_modules/xterm/css/xterm.css" />
+  <script src="../node_modules/xterm/lib/xterm.js"></script>
+	[css]
 </head>
-<script src="../node_modules/codemirror/lib/codemirror.js"></script>
-<script src="../node_modules/codemirror/addon/search/search.js"></script>
-<script src="../node_modules/codemirror/addon/search/searchcursor.js"></script>
-<script src="../node_modules/codemirror/addon/search/matchesonscrollbar.js"></script>
-<script src="../node_modules/codemirror/addon/search/match-highlighter.js"></script>
-<script src="../node_modules/codemirror/addon/search/jump-to-line.js"></script>
-<script src="../node_modules/codemirror/addon/search/annotatescrollbar.js"></script>
-<script src="../node_modules/codemirror/mode/javascript/javascript.js"></script>
+
 <body>
 
-	<h1>CODE</h1>
+  <div id="content">
 
-	<script>
-		var myCodeMirror = CodeMirror(document.body, {
-	  	value: "function myScript(){return 100;}\n",
-	  	mode:  "javascript",
-			lineNumbers: true,
-	    styleActiveLine: true,
-			smartIndent: true,
-			search: true,
-	    matchBrackets: true,
-			theme: 'base16-dark'
-		});
+		<h1>ian's code editor</h1>
+		<h3><i>it is so simple</i></h3>
+		<br>
+		<form>
+			<div class="form-row">
+			  <div class="form-group col-md-3">
+			    <label for="mode">Language</label>
+					<select class="form-control" id="mode">
+						[mode]
+					</select>
+			  </div>
+				<div class="form-group col-md-3">
+			    <label for="theme">Theme</label>
+					<select class="form-control" id="theme">
+						[theme]
+					</select>
+			  </div>
+			</div>
+		</form>
 
-		setTimeout(function(){
+	</div>
 
-			var edit = myCodeMirror.getValue();
-				 console.log(edit);
+	<form>
+		<textarea id="code" name="code">
+		</textarea>
+	</form>
 
-		}, 4000);
+	<div id="content">
 
-	</script>
+		<div class="row">
+			<div class="input-group col-md-4">
+			  <div class="input-group-prepend">
+			    <button id="run" class="appbtn btn" type="button">Run</button>
+			  </div>
+			  <input type="text" id="args" class="form-control" placeholder="Enter command line arguments (or leave blank for no arguments)" aria-label="" aria-describedby="basic-addon1">
+			</div>
 
-	<button>RUN</button>
+			<div class="input-group col-md-4">
+			  <div class="input-group-prepend">
+			    <button id="download" class="appbtn btn" type="button">Download file as</button>
+			  </div>
+			  <input type="text" id="args" class="form-control" placeholder="Filename" aria-label="" aria-describedby="basic-addon1">
+			</div>
+
+			<div class="input-group col-md-4">
+			  <button id="reset" class="appbtn btn" type="button">Reset Window</button>
+			</div>
+		</div>
+
+		<span style="display:block; height: 40px;"></span>
+		<h2>Shell</h2>
+		<span style="display:block; height: 20px;"></span>
+
+		<div id="terminal"></div>
+
+	</div>
 
 </body>
 
+[js]
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+<script src="/client/client.js"></script>
 
 </html>

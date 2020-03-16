@@ -1,0 +1,22 @@
+.CodeMirror {
+  font-size: 14px;
+}
+
+html, body {
+  color: #EEEEEE;
+  background-color: #8B909B;
+  font-family: 'Roboto', helvetica, sans-serif;
+}
+
+#content {
+  padding: 40px;
+}
+
+.appbtn {
+  color: #EEEEEE;
+  background-color: #207fd3;
+}
+
+.appbtn:hover {
+  background-color: #0866b9;
+}

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
+	<link href="/client/style.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="../node_modules/xterm/css/xterm.css" />
+  <script src="../node_modules/xterm/lib/xterm.js"></script>
+	<link rel="stylesheet" href="../node_modules/codemirror/lib/codemirror.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/addon/scroll/simplescrollbars.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/addon/hint/show-hint.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/addon/search/matchesonscrollbar.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/addon/display/fullscreen.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/3024-day.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/3024-night.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/abcdef.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/ambiance-mobile.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/ambiance.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/ayu-dark.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/ayu-mirage.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/base16-dark.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/base16-light.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/bespin.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/blackboard.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/cobalt.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/colorforth.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/darcula.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/dracula.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/duotone-dark.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/duotone-light.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/eclipse.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/elegant.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/erlang-dark.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/gruvbox-dark.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/hopscotch.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/icecoder.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/idea.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/isotope.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/lesser-dark.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/liquibyte.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/lucario.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/material-darker.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/material-ocean.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/material-palenight.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/material.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/mbo.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/mdn-like.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/midnight.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/monokai.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/moxer.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/neat.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/neo.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/night.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/nord.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/oceanic-next.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/panda-syntax.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/paraiso-dark.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/paraiso-light.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/pastel-on-dark.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/railscasts.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/rubyblue.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/seti.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/shadowfox.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/solarized.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/ssms.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/the-matrix.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/tomorrow-night-bright.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/tomorrow-night-eighties.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/ttcn.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/twilight.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/vibrant-ink.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/xq-dark.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/xq-light.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/yeti.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/yonce.css"></script>
+<link rel="stylesheet" href="../node_modules/codemirror/theme/zenburn.css"></script>
+
+</head>
+
+<body>
+
+  <div id="content">
+
+		<h1>ian's code editor</h1>
+		<h3><i>it is so simple</i></h3>
+		<br>
+		<form>
+			<div class="form-row">
+			  <div class="form-group col-md-3">
+			    <label for="mode">Language</label>
+					<select class="form-control" id="mode">
+						<option>C</option>
+
+					</select>
+			  </div>
+				<div class="form-group col-md-3">
+			    <label for="theme">Theme</label>
+					<select class="form-control" id="theme">
+						<option>3024-day</option>
+<option>3024-night</option>
+<option>abcdef</option>
+<option>ambiance-mobile</option>
+<option>ambiance</option>
+<option>ayu-dark</option>
+<option>ayu-mirage</option>
+<option>base16-dark</option>
+<option>base16-light</option>
+<option>bespin</option>
+<option>blackboard</option>
+<option>cobalt</option>
+<option>colorforth</option>
+<option>darcula</option>
+<option>dracula</option>
+<option>duotone-dark</option>
+<option>duotone-light</option>
+<option>eclipse</option>
+<option>elegant</option>
+<option>erlang-dark</option>
+<option>gruvbox-dark</option>
+<option>hopscotch</option>
+<option>icecoder</option>
+<option>idea</option>
+<option>isotope</option>
+<option>lesser-dark</option>
+<option>liquibyte</option>
+<option>lucario</option>
+<option>material-darker</option>
+<option>material-ocean</option>
+<option selected>material-palenight</option>
+<option>material</option>
+<option>mbo</option>
+<option>mdn-like</option>
+<option>midnight</option>
+<option>monokai</option>
+<option>moxer</option>
+<option>neat</option>
+<option>neo</option>
+<option>night</option>
+<option>nord</option>
+<option>oceanic-next</option>
+<option>panda-syntax</option>
+<option>paraiso-dark</option>
+<option>paraiso-light</option>
+<option>pastel-on-dark</option>
+<option>railscasts</option>
+<option>rubyblue</option>
+<option>seti</option>
+<option>shadowfox</option>
+<option>solarized</option>
+<option>ssms</option>
+<option>the-matrix</option>
+<option>tomorrow-night-bright</option>
+<option>tomorrow-night-eighties</option>
+<option>ttcn</option>
+<option>twilight</option>
+<option>vibrant-ink</option>
+<option>xq-dark</option>
+<option>xq-light</option>
+<option>yeti</option>
+<option>yonce</option>
+<option>zenburn</option>
+
+					</select>
+			  </div>
+			</div>
+		</form>
+
+	</div>
+
+	<form>
+		<textarea id="code" name="code">
+		</textarea>
+	</form>
+
+	<div id="content">
+
+		<div class="row">
+			<div class="input-group col-md-4">
+			  <div class="input-group-prepend">
+			    <button id="run" class="appbtn btn" type="button">Run</button>
+			  </div>
+			  <input type="text" id="args" class="form-control" placeholder="Enter command line arguments (or leave blank for no arguments)" aria-label="" aria-describedby="basic-addon1">
+			</div>
+
+			<div class="input-group col-md-4">
+			  <div class="input-group-prepend">
+			    <button id="download" class="appbtn btn" type="button">Download file as</button>
+			  </div>
+			  <input type="text" id="args" class="form-control" placeholder="Filename" aria-label="" aria-describedby="basic-addon1">
+			</div>
+
+			<div class="input-group col-md-4">
+			  <button id="reset" class="appbtn btn" type="button">Reset Window</button>
+			</div>
+		</div>
+
+		<span style="display:block; height: 40px;"></span>
+		<h2>Shell</h2>
+		<span style="display:block; height: 20px;"></span>
+
+		<div id="terminal"></div>
+
+	</div>
+
+</body>
+
+<script src="../node_modules/codemirror/lib/codemirror.js"></script>
+<script src="../node_modules/codemirror/addon/edit/closebrackets.js"></script>
+<script src="../node_modules/codemirror/addon/edit/closetag.js"></script>
+<script src="../node_modules/codemirror/addon/edit/continuelist.js"></script>
+<script src="../node_modules/codemirror/addon/edit/matchbrackets.js"></script>
+<script src="../node_modules/codemirror/addon/edit/matchtags.js"></script>
+<script src="../node_modules/codemirror/addon/edit/trailingspace.js"></script>
+<script src="../node_modules/codemirror/addon/comment/comment.js"></script>
+<script src="../node_modules/codemirror/addon/comment/continuecomment.js"></script>
+<script src="../node_modules/codemirror/addon/scroll/annotatescrollbar.js"></script>
+<script src="../node_modules/codemirror/addon/scroll/scrollpastend.js"></script>
+<script src="../node_modules/codemirror/addon/scroll/simplescrollbars.js"></script>
+<script src="../node_modules/codemirror/addon/hint/anyword-hint.js"></script>
+<script src="../node_modules/codemirror/addon/hint/css-hint.js"></script>
+<script src="../node_modules/codemirror/addon/hint/html-hint.js"></script>
+<script src="../node_modules/codemirror/addon/hint/javascript-hint.js"></script>
+<script src="../node_modules/codemirror/addon/hint/show-hint.js"></script>
+<script src="../node_modules/codemirror/addon/hint/sql-hint.js"></script>
+<script src="../node_modules/codemirror/addon/hint/xml-hint.js"></script>
+<script src="../node_modules/codemirror/addon/wrap/hardwrap.js"></script>
+<script src="../node_modules/codemirror/addon/search/jump-to-line.js"></script>
+<script src="../node_modules/codemirror/addon/search/match-highlighter.js"></script>
+<script src="../node_modules/codemirror/addon/search/matchesonscrollbar.js"></script>
+<script src="../node_modules/codemirror/addon/search/search.js"></script>
+<script src="../node_modules/codemirror/addon/search/searchcursor.js"></script>
+<script src="../node_modules/codemirror/addon/display/autorefresh.js"></script>
+<script src="../node_modules/codemirror/addon/display/fullscreen.js"></script>
+<script src="../node_modules/codemirror/addon/display/panel.js"></script>
+<script src="../node_modules/codemirror/addon/display/placeholder.js"></script>
+<script src="../node_modules/codemirror/addon/display/rulers.js"></script>
+<script src="../node_modules/codemirror/mode/clike/clike.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+<script src="/client/client.js"></script>
+
+</html>
