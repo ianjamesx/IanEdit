@@ -6,6 +6,25 @@ var proc = {
 
   run: (code, args, mode, callback) => {
 
+    switch(mode){
+
+      case 'c':
+      var cmds = `gcc -c userprg.cpp
+                  gcc -o userprg userprg.o
+                  ./userprg ` + args;
+
+      break;
+      case 'c++':
+        var cmds = `g++ -c userprg.cpp
+                    g++ -o userprg userprg.o
+                    ./userprg ` + args;
+
+      break;
+      case 'node':
+        var cmds = `node userprg`;
+      break;
+    }
+
     var start = Date.now();
 
     var codefile = "./file.c"; //file we'll move users code to (to compile and run)
@@ -37,43 +56,6 @@ var proc = {
 
       });
     });
-    /*exec('./quickrun.sh', (err, stdout, stderr) => {
-
-      var end = Date.now();
-      console.log('compiled and ran in ' + (end - start) + 'ms');
-
-      callback({
-        stdout: stdout,
-        stderr: stderr,
-        err: err
-      });
-
-    });
-    */
-
-/*
-    var scriptOutput = "";
-
-    child.stdout.setEncoding('utf8');
-    child.stdout.on('data', function(data) {
-        console.log('1stdout: ' + data);
-
-        data=data.toString();
-        scriptOutput+=data;
-    });
-
-    child.stderr.setEncoding('utf8');
-    child.stderr.on('data', function(data) {
-        console.log('1stderr: ' + data);
-
-        data=data.toString();
-        scriptOutput+=data;
-    });
-
-    child.on('close', function(code) {
-        callback(scriptOutput,code);
-    });
-*/
   },
 
   runcmd: (cmd, callback) => { //run linux cmd

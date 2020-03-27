@@ -5,7 +5,6 @@ var serv = require('http').Server(app);
 var io = require('socket.io')(serv);
 
 var render = require('./render');
-var preset = require('./presets');
 var socketutils = require('./socketutils');
 var proc = require('./proc');
 

@@ -17,14 +17,19 @@ $(document).ready(() => {
     matchBrackets: true,
     autoCloseBrackets: true,
     viewportMargin: Infinity,
-    theme: 'duotone-dark'
+    theme: 'abcdef'
   });
   editor.setSize("100%", (window.innerHeight)*.7); //set editor height to be 70% of users window
 
   /*
   init code terminal
   */
-  term = new Terminal();
+  term = new Terminal({
+    rows: 40
+  });
+
+  console.log(term.rows);
+
   term.open(document.getElementById('terminal'));
   terminalctl.init(term); //init terminal
 
@@ -51,6 +56,10 @@ $("#run").click(() => {
   editorctl.sendCode();
 });
 
+$("#reset").click(() => {
+  editorctl.setCodePreset();
+});
+
 /*
 utils for the code editor window
 */
@@ -68,8 +77,8 @@ var editorctl = {
     });
   },
 
-  setCodePreset: (language) => {
-
+  setCodePreset: () => {
+    editor.setValue(presets.systemsoftware());
   },
 
   changeTheme: (theme) => {

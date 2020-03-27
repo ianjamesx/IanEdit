@@ -6,8 +6,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
 	<link href="/client/style.css" rel="stylesheet">
 
-	<link rel="stylesheet" href="../node_modules/xterm/css/xterm.css" />
+	<link rel="stylesheet" href="../node_modules/xterm/css/xterm.css"/>
   <script src="../node_modules/xterm/lib/xterm.js"></script>
+  <!--<script src="../node_modules/xterm-addon-fit/lib/xterm-addon-fit.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
 	<link rel="stylesheet" href="../node_modules/codemirror/lib/codemirror.css"></script>
 <link rel="stylesheet" href="../node_modules/codemirror/addon/scroll/simplescrollbars.css"></script>
@@ -87,21 +88,30 @@
 		<h1>ian's code editor</h1>
 		<h3><i>it is so simple</i></h3>
 		<br>
-		<form>
-			<div class="form-row">
-			  <div class="form-group col-md-3">
-			    <label for="mode">Language</label>
-					<select class="form-control" id="mode">
-						<option>C</option>
 
-					</select>
-			  </div>
-				<div class="form-group col-md-3">
-			    <label for="theme">Theme</label>
-					<select class="form-control" id="theme">
-						<option>3024-day</option>
+		<!-- labels -->
+		<div class="row">
+			<div class="col-md-1">
+				<p>language</p>
+		  </div>
+			<div class="col-md-1">
+				<p>theme</p>
+		  </div>
+		</div>
+
+		<div class="row">
+			<!-- text editor options -->
+		  <div class="input-group col-md-1">
+				<select class="form-control" id="mode">
+					<option>C</option>
+
+				</select>
+		  </div>
+			<div class="input-group col-md-2">
+				<select class="form-control" id="theme">
+					<option>3024-day</option>
 <option>3024-night</option>
-<option>abcdef</option>
+<option selected>abcdef</option>
 <option>ambiance-mobile</option>
 <option>ambiance</option>
 <option>ayu-dark</option>
@@ -129,7 +139,7 @@
 <option>lucario</option>
 <option>material-darker</option>
 <option>material-ocean</option>
-<option selected>material-palenight</option>
+<option>material-palenight</option>
 <option>material</option>
 <option>mbo</option>
 <option>mdn-like</option>
@@ -163,45 +173,46 @@
 <option>yonce</option>
 <option>zenburn</option>
 
-					</select>
-			  </div>
+				</select>
+		  </div>
+			<!-- shell contorls -->
+			<div class="input-group col-md-3">
+				<div class="input-group-prepend">
+					<button id="run" class="appbtn btn" type="button">Run</button>
+				</div>
+				<input type="text" id="args" class="form-control" placeholder="Enter command line arguments (or leave blank for no arguments)" aria-label="" aria-describedby="basic-addon1">
 			</div>
-		</form>
 
-	</div>
-
-	<form>
-		<textarea id="code" name="code">
-		</textarea>
-	</form>
-
-	<div id="content">
-
-		<div class="row">
-			<div class="input-group col-md-4">
-			  <div class="input-group-prepend">
-			    <button id="run" class="appbtn btn" type="button">Run</button>
-			  </div>
-			  <input type="text" id="args" class="form-control" placeholder="Enter command line arguments (or leave blank for no arguments)" aria-label="" aria-describedby="basic-addon1">
+			<div class="input-group col-md-2">
+				<div class="input-group-prepend">
+					<button id="download" class="appbtn btn" type="button">Download file as</button>
+				</div>
+				<input type="text" id="args" class="form-control" placeholder="Filename" aria-label="" aria-describedby="basic-addon1">
 			</div>
 
 			<div class="input-group col-md-4">
-			  <div class="input-group-prepend">
-			    <button id="download" class="appbtn btn" type="button">Download file as</button>
-			  </div>
-			  <input type="text" id="args" class="form-control" placeholder="Filename" aria-label="" aria-describedby="basic-addon1">
-			</div>
-
-			<div class="input-group col-md-4">
-			  <button id="reset" class="appbtn btn" type="button">Reset Window</button>
+				<button id="reset" class="appbtn btn" type="button">Reset Window</button>
 			</div>
 		</div>
 
-		<span style="display:block; height: 40px;"></span>
-		<h2>Shell</h2>
 		<span style="display:block; height: 20px;"></span>
 
-		<div id="terminal"></div>
+		<div class="row">
+
+			<div class="col">
+				<h2>Text Editor</h2>
+				<form>
+					<textarea id="code" name="code">
+					</textarea>
+				</form>
+			</div>
+
+			<div class="col">
+				<h2>Shell</h2>
+				<div id="terminal"></div>
+			</div>
+
+		</div>
 
 	</div>
 
@@ -243,5 +254,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 <script src="/client/client.js"></script>
+<script src="/client/presets.js"></script>
 
 </html>

@@ -9,7 +9,8 @@
     "monaco-editor": "^0.20.0",
     "socket.io": "^2.3.0",
     "std-pour": "^1.1.0",
-    "xterm": "^4.4.0"
+    "xterm": "^4.4.0",
+    "xterm-addon-fit": "^0.3.0"
   },
   "devDependencies": {},
   "scripts": {

@@ -131,7 +131,7 @@ var render = {
 
     var i;
     for(i = 0; i < themes.length; i++){
-      if(themes[i] == 'material-palenight'){ //default value
+      if(themes[i] == 'abcdef'){ //default value
         options += '<option selected>' + themes[i] + '</option>\n';
       } else {
         options += '<option>' + themes[i] + '</option>\n';
