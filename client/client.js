@@ -20,12 +20,13 @@ $(document).ready(() => {
     theme: 'abcdef'
   });
   editor.setSize("100%", (window.innerHeight)*.7); //set editor height to be 70% of users window
+  editorctl.setCodePreset();
 
   /*
   init code terminal
   */
   term = new Terminal({
-    rows: 40
+    rows: 30
   });
 
   console.log(term.rows);

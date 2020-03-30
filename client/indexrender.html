@@ -92,10 +92,10 @@
 		<!-- labels -->
 		<div class="row">
 			<div class="col-md-1">
-				<p>language</p>
+				<p>Language</p>
 		  </div>
-			<div class="col-md-1">
-				<p>theme</p>
+			<div class="col-md-2">
+				<p>Theme</p>
 		  </div>
 		</div>
 
@@ -178,20 +178,29 @@
 			<!-- shell contorls -->
 			<div class="input-group col-md-3">
 				<div class="input-group-prepend">
-					<button id="run" class="appbtn btn" type="button">Run</button>
-				</div>
-				<input type="text" id="args" class="form-control" placeholder="Enter command line arguments (or leave blank for no arguments)" aria-label="" aria-describedby="basic-addon1">
-			</div>
-
-			<div class="input-group col-md-2">
-				<div class="input-group-prepend">
 					<button id="download" class="appbtn btn" type="button">Download file as</button>
 				</div>
 				<input type="text" id="args" class="form-control" placeholder="Filename" aria-label="" aria-describedby="basic-addon1">
 			</div>
+			<div class="input-group col-md-1">
+				<button id="reset" class="appbtn btn" type="button">Reset Code</button>
+			</div>
 
-			<div class="input-group col-md-4">
-				<button id="reset" class="appbtn btn" type="button">Reset Window</button>
+		</div>
+
+		<span style="display:block; height: 10px;"></span>
+		<hr>
+		<span style="display:block; height: 10px;"></span>
+
+		<div class="row">
+			<div class="input-group col-md-2">
+				<input type="text" id="flags" class="form-control" placeholder="Compilation Flags" aria-label="" aria-describedby="basic-addon1">
+			</div>
+			<div class="input-group col-md-3">
+				<input type="text" id="args" class="form-control" placeholder="Command Line Arguments" aria-label="" aria-describedby="basic-addon1">
+			</div>
+			<div class="input-group col-md-3">
+				<button id="run" class="appbtn btn" type="button">Run</button>
 			</div>
 		</div>
 

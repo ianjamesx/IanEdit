@@ -58,7 +58,7 @@ var proc = {
     });
   },
 
-  runcmd: (cmd, callback) => { //run linux cmd
+  runcmd: (cmd, callback) => { //run cmd
 
     try {
       exec(cmd, (err, stdout, stderr) => {

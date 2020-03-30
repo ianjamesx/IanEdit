@@ -33,7 +33,7 @@ var render = {
     }
 
     var i, j;
-    for(i = 0; i < dependdirs.length; i++){ //loop through folders for dependencies user requests
+    for(i = 0; i < dependdirs.length; i++){ //go through folders for dependencies user requests
 
       var subpath = dependpath + '/' + dependdirs[i];
       var subdirs;
